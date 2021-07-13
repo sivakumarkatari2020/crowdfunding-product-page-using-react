@@ -44,20 +44,7 @@ export const Nav = styled.div`
     align-items: center;
 
     @media (max-width : 450px){
-        width: 300px;
-        height: 200px;
-        background-color: #ffffff;
-        color: #000000;
-        font-size: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 0%;
-        left: 50%;
-        transform: translate(-50%,50%);
-        z-index: 9999;
+        display: none;
     }
 `
 

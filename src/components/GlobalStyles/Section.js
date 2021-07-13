@@ -23,5 +23,43 @@ export const Section = styled.div`
         border: 1px solid #000;
         box-shadow: none;
         opacity: 0.25;
+        pointer-events: none;
+    `}
+
+    ${props => props.backed && css`
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translate(-50%,0);
+        width: 100vw;
+        height: 100%;
+        padding: 0;
+        background-color: rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    `}
+
+    ${props => props.innerBacked && css`
+        position: absolute;
+        top : 15%;
+        width: 40%;
+        height: auto;
+        padding: 2rem;
+        margin: 2rem;
+        background-color: #ffffff;
+        border: 1px solid #000;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width : 450px){
+            width: 90%;
+            padding: 1rem;
+        }
     `}
 `

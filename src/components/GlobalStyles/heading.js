@@ -23,4 +23,14 @@ export const H1 = styled.h1`
         font-size: 3rem;
     `}
 
+    ${props => props.small && css`
+        font-size: 1rem;
+        margin-top: 0;
+        padding-right: 1rem;
+
+        @media (max-width : 450px){
+            font-size: 0.8rem;
+        }
+    `}
+
 `

@@ -5,7 +5,9 @@ import {Button} from './GlobalStyles/Button'
 import { Paragraph,Wrapper } from './SectionOneStyles';
 import {AboutSection} from './SectionThreeStyles';
 
-function SectionThree() {
+function SectionThree(props) {
+    const {backProject} = props;
+
     return (
         <Section>
             <AboutSection>
@@ -26,6 +28,7 @@ function SectionThree() {
                 description="You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."
                 left="101"
                 buttontxt="Select Reward"
+                onClick={() => {backProject(true)}}
             />
             <InnerSections 
                 type=""
@@ -34,6 +37,7 @@ function SectionThree() {
                 description="You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."
                 left="64"
                 buttontxt="Select Reward"
+                onClick={() => {backProject(true)}}
             />
             <InnerSections
                 type="fadeOut"
@@ -43,12 +47,13 @@ function SectionThree() {
                 to our Backer member list. Shipping is included."
                 left="0"
                 buttontxt="Out of Stock"
+                onClick={() => {backProject(true)}}
             />
         </Section>
     )
 }
 
-function InnerSections({type,heading,pledge,description,left,buttontxt}){
+function InnerSections({type,heading,pledge,description,left,buttontxt,onClick}){
     if(type === 'fadeOut'){
         return(
             <Section fade>
@@ -62,7 +67,7 @@ function InnerSections({type,heading,pledge,description,left,buttontxt}){
                         <H1 big>{left}</H1>
                         <Paragraph>left</Paragraph>
                     </Wrapper>
-                    <Button small>{buttontxt}</Button>
+                    <Button small onClick={onClick}>{buttontxt}</Button>
                 </Wrapper>
             </Section>
         )
@@ -80,7 +85,7 @@ function InnerSections({type,heading,pledge,description,left,buttontxt}){
                         <H1 big>{left}</H1>
                         <Paragraph>left</Paragraph>
                     </Wrapper>
-                    <Button small>{buttontxt}</Button>
+                    <Button small onClick={onClick}>{buttontxt}</Button>
                 </Wrapper>
             </Section>
         )
